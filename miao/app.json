@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/supply/supply",
+    "pages/buy/buy",
+    "pages/search/search",
+    "pages/miao/miao",
+    "pages/me/me",
+    "pages/me/mySupply/mySupply",
+    "pages/me/myBuy/myBuy",
+    "pages/phone/phone",
+    "pages/page/page",
+    "pages/Release/supply/supply",
+    "pages/Release/buy/buy",
+    "pages/Release/miao/miao",
+    "pages/new/new",
+    "pages/report/report",
+    "pages/me/myCollection/myCollection",
+    "pages/follow/follow"
+  ],
+  "enablePullDownRefresh": true,
+  "permission": {  
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于供求地址"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#59cd5e",
+    "color": "#444",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./images/home1.png",
+        "selectedIconPath": "./images/home.png"
+      },
+      {
+        "pagePath": "pages/supply/supply",
+        "text": "供应大厅",
+        "iconPath": "./images/supply1.png",
+        "selectedIconPath": "./images/supplyicon.png"
+      },
+      {
+        "pagePath": "pages/miao/miao",
+        "text": "苗友",
+        "iconPath": "./images/miao1.png",
+        "selectedIconPath": "./images/miao.png"
+      },
+      {
+        "pagePath": "pages/buy/buy",
+        "text": "求购大厅",
+        "iconPath": "./images/buy1.png",
+        "selectedIconPath": "./images/buyicon.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "./images/me1.png",
+        "selectedIconPath": "./images/me.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-toast": "./dist/toast/index",
+    "van-notify": "./dist/notify/index"
+  }
+}

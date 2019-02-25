@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-notify": "../../dist/notify/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "供应大厅"
+}

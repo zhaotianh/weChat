@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-dialog": "../../../dist/dialog/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "我的求购"
+}

@@ -1,0 +1,3 @@
+<!--pages/page/page.wxml-->
+<web-view src="{{url}}"></web-view>
+<!-- <web-view src="https://test.maimiaoyun.cn/test.html"></web-view> 测试使用 -->

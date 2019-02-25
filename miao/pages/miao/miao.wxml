@@ -1,0 +1,48 @@
+<!-- html提示 -->
+<van-toast id="van-toast" /> 
+<!-- 地址选择 -->
+<view class='adressDiv'>
+  <van-area area-list="{{ addressListData }}" columns-num="{{ 2 }}" title="地址选择" visible-item-count="6" bind:confirm="conadress" bind:cancel="closeadress" wx:if="{{adressDiv}}"/>
+</view>
+<!-- 点击图片 -->
+<van-popup show="{{ show }}" bind:close="onClose" class="popup">
+<swiper indicator-dots="1000" interval="5000" duration="600" current="{{ind}}"  class='banner'>
+  <block wx:for="{{bannerImg}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.path}}?x-oss-process=image/resize,m_lfit,w_440/crop,g_center,h_352" class="slide-image" width="750" height="600" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='bannerText'>{{contText}}</view>
+</van-popup>
+<!-- 头部 -->
+<view class='header'>
+  <view class='clearfix header_top' style='background:{{background}};padding:{{margin}};'>
+    <view class='fl' bindtap='miaoFriend'><image src='../../images/miaoY.png' wx:if="{{imgSearch}}"></image><image src='../../images/miaoY1.png' wx:else></image></view>
+    <view class='fr' bindtap='miaoFb'><image src='../../images/miaoF.png' wx:if="{{imgSearch}}"></image><image src='../../images/miaoF1.png' wx:else></image></view>
+  </view>
+  <view class='userInfo'>
+    <text class='word_1'>{{name}}</text>
+    <button class='photoDiv' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{!login}}" ><image src="../../images/photo.png"></image></button>
+    <image wx:else src="{{loginImg}}?x-oss-process=image/resize,m_lfit,w_100/crop,g_center,h_100"></image>
+  </view>
+  <view class='adress' bindtap='openadress'><image src="../../images/adress1.png"></image>{{area}}</view>
+</view>
+<view class='noHave'  wx:if="{{noHave}}"><image src="../../images/noHave.png"></image></view>
+<!-- 苗友圈数据展示 -->
+<view class='miaoConts' wx:else>
+  <view class='miaoCont' wx:for="{{miaoList}}" wx:key="{{index}}">
+    <view class='clearfix miaoContTop'>
+      <view class='fl miaoContImage'><image src='{{item.headPortrait?item.headPortrait:"https://miaoyuan-img.oss-cn-beijing.aliyuncs.com/MicroApp/photo.png"}}?x-oss-process=image/resize,m_lfit,w_50/crop,g_center,h_50'></image></view>
+      <view class='fl miaoContTitle'>
+        <view class='clearfix miaoCont_1'><text class='miaoContPhone word_1'>{{item.nickname}}</text><text class='miaoContAdress word_1'>{{item.address}}</text></view>
+        <view class='miaoCont_title word_1'>{{item.content}}</view>
+      </view>
+      <view class='fl miaoContImgs'>
+      <image wx:for="{{item.attas}}" wx:for-item="li" bindtap='open' data-text="{{item.content}}" data-img="{{item.attas}}" data-key='{{index}}' wx:key="{{index}}" src='{{(item.imgFlag||serollFlag)?li.path+"?x-oss-process=image/resize,m_lfit,w_100/crop,g_center,h_100":"../../images/supplyLoading.png"}}'></image>
+      </view>
+    </view>
+    <view class='miaoContTime'>{{item.buyTime}}</view> 
+  </view>
+</view>
+<view class='loadingText' wx:if="{{loading}}"><image src="../../images/loading.gif" class='loading'></image></view>

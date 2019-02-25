@@ -1,0 +1,16 @@
+page{background:#f4f4f4;}
+.fbHeader{background:#fff;margin:0 0 20rpx 0;padding:30rpx 20rpx 0 20rpx;width:710rpx;border-top:1rpx solid #f4f4f4;}
+.fbX{width:14rpx;height:14rpx;margin:0 10rpx 0 0;} 
+.fbHeader image{vertical-align:top;display:inline-block;}
+.fBBtn{width:200rpx;height: 166rpx;}
+.fbHeaderMidImg, .fbHeaderMidImg_img{width:200rpx;height: 166rpx;position:relative;}
+.fbHeaderMidImg_close{width:40rpx;height:40rpx;position:absolute;top:-10rpx;right:-10rpx;}
+.fbHeaderMidImg{margin:0 38rpx 30rpx 0;}
+.fbHeaderMid{width:710rpx;}
+.fbHeaderText{color: #24ba8e;font-size:26rpx;max-width:450rpx;line-height:50rpx;margin:30rpx 0 0 30rpx;}
+.fbContDw1{font-size:28rpx;line-height:70rpx;height:70rpx;vertical-align:top;}
+.FbLjBtn{font-size:30rpx;line-height:84rpx;height:84rpx;text-align:center;position:fixed;bottom:0;left:0;background:#24ba8e;width:750rpx;color:#fff;z-index:10;}
+.textarea{width:100%;padding:20rpx 0;margin:0 0 20rpx 0;font-size:30rpx;height:150rpx;}
+.adress image{width:30rpx;height:30rpx;padding:6rpx 20rpx 0 0;}
+.adress{width:100%;font-size:30rpx;padding:20rpx 0;border-top:1rpx solid #f1f1f1;margin:20rpx 0 0 0;}
+.adressDiv{position:fixed;bottom:0;width:750rpx;z-index:10000;}

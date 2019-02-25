@@ -1,0 +1,79 @@
+<!-- html提示 -->
+<van-toast id="van-toast" /> 
+<van-notify id="van-notify" /> 
+<!-- 发布区域 -->
+<van-popup show="{{ show }}" bind:close="onClose">
+  <view class='FbView clearfix'>
+    <view class='fl FbView1' bindtap='fBsupply'><image src="../../images/fb_su.png"></image><view><text>发供应</text>免费发布供应</view></view>
+    <view class='fl FbView1' bindtap='fBbuy'><image src="../../images/fb_buy.png"></image><view><text>发求购</text>免费发布供应</view></view>
+    <view class='fl FbView1' bindtap='fBmiao'><image src="../../images/fb_miao.png"></image><view><text>发苗友圈</text>结交天下苗友</view></view>
+  </view>
+</van-popup>
+<!-- 搜索框 -->
+<view class='searchDiv clearfix' style='background:{{background}};border-top:{{border}};'>
+  <button wx:if="{{loginFlag}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='fl login'><image wx:if="{{imgSearch}}" src='../../images/login.png'></image><image src='../../images/login1.png' wx:else></image></button>
+  <image wx:else src="{{loginImg}}" class='loginImg fl'></image>
+  <view class='fl search' style='background:{{backgroundInput}};'>
+    <input placeholder='请输入要搜索的文字' bindtap='search' class='searchInput'></input><image src='../../images/search.png'></image>
+  </view>
+  <image src="../../images/info.png" wx:if="{{info}}" class='me_info fl'></image>
+  <image src="../../images/infoH.png" wx:else class='me_info fl'></image>
+</view> 
+<view class='header'>
+  <!-- 轮播图 -->
+  <swiper class='banner' indicator-dots="1000" autoplay='true' interval="5000" duration="600" indicator-active-color = "rgba(255,255,255,0.7)" circular="true" indicator-color='rgba(255,255,255,0.4)' >
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" class='bannerImg'/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> 
+<!-- 新闻 -->
+<view class='clearfix new' bindtap='new'>
+  <view class='fl newLeft'><image src='../../images/new.png'></image></view>
+  <swiper class='newRight fl' autoplay='true' interval="8000" duration="600" vertical="true" circular="true">
+    <swiper-item class="newRightItem">
+      <view class="newRightp" data-newId='{{newList[0].articleId}}'><text class='new_title'>新闻</text><text class='new_cont word_1'>{{newList[0].title}}</text></view>
+      <view class="newRightp" data-newId='{{newList[1].articleId}}'><text class='new_title1'>新闻</text><text class='new_cont word_1'>{{newList[1].title}}</text></view>
+    </swiper-item>
+    <swiper-item class="newRightItem">
+      <view class="newRightp" data-newId='{{newList[2].articleId}}'><text class='new_title'>新闻</text><text class='new_cont word_1'>{{newList[2].title}}</text></view>
+      <view class="newRightp" data-newId='{{newList[3].articleId}}'><text class='new_title1'>新闻</text><text class='new_cont word_1'>{{newList[3].title}}</text></view>
+    </swiper-item>
+    <swiper-item class="newRightItem">
+    <view class="newRightp" data-newId='{{newList[4].articleId}}'><text class='new_title'>新闻</text><text class='new_cont word_1'>{{newList[4].title}}</text></view>
+      <view class="newRightp" data-newId='{{newList[5].articleId}}'><text class='new_title1'>新闻</text><text class='new_cont word_1'>{{newList[5].title}}</text></view>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 供求导航 -->
+<view class='supplyBuy clearfix'>
+  <view class='fl' bindtap='supply'><image src='../../images/supply.png'></image></view>
+  <view class='fl' bindtap='buy'><image src='../../images/buy.png'></image></view>
+</view>
+<!-- 求购 -->
+<view class='buyTitle'><image src='../../images/buy_title.png'></image>推荐<text>求购</text><view class='buyMore fr' bindtap='buy'>更多<image src="../../images/arrow_l.png"></image></view></view> 
+<image wx:if="{{homeFlag}}" src='../../images/loading.gif' class='loading'></image>
+<view wx:else class='buyConts clearfix'>
+  <view class='buyCont' wx:for="{{buyList}}" wx:key="{{index}}" bindtap='buyUrl' data-proId='{{item.buyId}}'>
+    <view class='buy_Title'><text class='{{item.quantity?"word_1 buy_Title1":"word_1 buy_Title1 buyWidth"}}'>{{item.productName}}</text><text class='buyNum' wx:if="{{item.quantity}}">{{item.quantity}}棵</text></view>
+    <view class='buyGg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+    <view class='buyAdress word_1'><text>用苗地：</text>{{item.areaView}}</view>
+    <view class='buyTime'><image src='../../images/time.png'></image>{{item.buyTime}}</view>
+  </view>
+</view>
+<!-- 供应 -->
+<view class='buyTitle supplyTitle'><image src='../../images/supply_title.png'></image>推荐<text>供应</text><view class='buyMore fr' bindtap='supply'>更多<image src="../../images/arrow_l.png"></image></view></view> 
+<image wx:if="{{homeFlag}}" src='../../images/loading.gif' class='loading'></image>
+<view wx:else class='buyConts supplyConts clearfix'>
+  <view class='supplycont' wx:for="{{supplyList}}" wx:key="{{index}}" bindtap='supplyUrl' data-proId='{{item.supplyId}}'>
+    <image src='{{item.attas[0].path}}' class='supplyimg'></image>
+    <view class='supply_title'><text class='supply_title1 word_1'>{{item.productName}}</text><image src='../../images/goShop.png'  class='supply_shop fr' wx:if="{{item.dataSourceId=='app'}}" catchtap='goShop' data-shopid='{{item.partyId}}'></image></view>
+    <view class='supply_adress word_1'>{{item.areaView?item.areaView:"暂未维护"}}</view>
+    <view class='supply_Gg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+    <view class='supply_price'><text class='word_1'>{{(item.price!=0&&item.priceTwo!=0)?((item.price===item.priceTwo)?item.price+"元/棵":item.price+"-"+item.priceTwo+"元/棵"):"面议"}}</text><text class='supply_titleTime fr'>{{item.buyTime}}</text></view>
+  </view>
+</view>
+<!-- 发布 -->
+<image src='../../images/fb.png' class='fbBtn' bindtap='showFb'></image>

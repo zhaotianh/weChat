@@ -1,0 +1,2 @@
+page{background:#eaeaea;height:100%;}
+.buyList{padding:130rpx 0 0 0;overflow:auto;height:auto;}

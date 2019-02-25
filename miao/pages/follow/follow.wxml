@@ -1,0 +1,20 @@
+<!-- html提示 -->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<!-- 无数据图片 -->
+<view class='noHave'  wx:if="{{noHave}}"><image src="../../images/noHave.png"></image></view>
+<!-- 数据内容 -->
+<view class='followConts'>
+  <view class='followCont clearfix' wx:for="{{followData}}" wx:key="{{index}}" bindtap='goShop' data-shopid='{{item.followPartyId}}'>
+    <view class='fl followContImg'>
+      <image src="{{item.headPortrait?item.headPortrait:'../../images/photo.png'}}"></image>
+    </view>
+    <view class='fl followText'>
+      <view class='followName word_1'>{{item.nickname}}</view>
+      <view class='followAdress word_1'><image src='../../images/adress.png'></image>{{item.address?item.address:"未维护"}}</view>
+    </view>
+    <view class='qxFollow fl' catchtap='qxFollow' data-shopid='{{item.followPartyId}}'>取消关注</view>
+  </view>
+</view>
+<!-- 加载图片 -->
+<view class='loadingText' wx:if="{{loading}}"><image src="../../images/loading.gif" class='loading'></image></view>

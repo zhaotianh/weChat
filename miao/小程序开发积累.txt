@@ -1,0 +1,58 @@
+小程序验证授权---------------------------------------------------------
+wx.getSetting({
+  success(res) {
+    console.log(res)
+  },
+  fail(res) { 
+    console.log("授权失败");
+  }
+})
+小程序获取用户信息------------------------------------------------------
+wx.getUserInfo({
+  success: function (res) {
+    console.log(res)
+  },
+  fail: function (res) {
+    console.log('获取用户信息失败');
+  }
+})
+小程序用户登录---------------------------------------------------------
+wx.login({
+  success: function (res) {
+    console.log(res)
+  },
+  fail(res) {
+    console.log("登录失败获取code失败");
+  }
+})
+//修改app.js全局变量----------------------------------------------------
+const app = getApp();
+app.globalData.wxid = a;
+//小程序跳转------------------------------------------------------------
+wx.redirectTo({
+  // url: '../home/home',
+})
+//小程序获取点击对象自定义属性-------------------------------------------
+e.currentTarget.id
+//修改变量值------------------------------------
+that.setData({
+  loading: false,
+})
+
+wx.request({
+      url: 'https://test.api.maimiaoyun.cn/index', // 仅为示例，并非真实的接口地址
+      header: {
+        client_id: '26A8B1CA-F6CB-4F5C-B985-BA4388953B71',
+        client_secret: '862F4560-9ED6-4481-AB76-C12C8DB377B6',
+        device_id: 'platform'
+      },
+      success(res) {
+       
+      },
+      fail(res) {
+        this.alert('数据接口出现问题', 2000, 'red');
+      }
+    })
+    ///////////////////////////////////////
+    e.currentTarget.dataset
+    

@@ -1,0 +1,28 @@
+/* pages/miao/miao.wxss */
+.header{height:300rpx;background:url(https://miaoyuan-microapp.oss-cn-beijing.aliyuncs.com/SourceMaterial/miaoBg.png?x-oss-process=image/resize,m_lfit,w_500/crop,g_center,h_170) no-repeat;background-size: 750rpx 262rpx;width:750rpx;position:relative;}
+.header_top image{width:50rpx;height:60rpx;margin:0 30rpx;vertical-align:top;}
+.header_top {position:fixed;top:0;left:0;width:750rpx;z-index:100;padding:30rpx 0;transition:0.5s;height:68rpx;}
+.userInfo{position:absolute;right:36rpx;bottom:-6rpx;}
+.userInfo image{width:126rpx;height:126rpx;vertical-align:top;}
+.userInfo text{color:#fff;font-size:32rpx;vertical-align:top;line-height:90rpx;display:inline-block;margin:0 30rpx 0 0;max-width: 350rpx;}
+.adress{position:absolute;left:30rpx;bottom:56rpx;color:#fff;font-size:32rpx;height:40rpx;line-height:40rpx;}
+.adress image{width:40rpx;height:40rpx;vertical-align:top;}
+.header1{height:60rpx;width:750rpx;}
+.miaoConts{padding:40rpx 20rpx 0 20rpx;width:750rpx;}
+.miaoContImage, .miaoContImage image{width:84rpx;height:84rpx;}
+.miaoContImage{margin:0 14rpx 0 0;}
+.miaoCont_1{line-height:40rpx;height:40rpx;}
+.miaoContPhone{font-size:32rpx;color:#00ae66;max-width:300rpx;vertical-align:top;}
+.miaoContAdress{float:right;max-width:300rpx;font-size:28rpx;vertical-align:top;color:#999;}
+.miaoContTitle{width:612rpx;}
+.miaoCont_title{font-size:32rpx;padding:10rpx 0 0 0;}
+.miaoContImgs{width:614rpx;padding:20rpx 0 0 98rpx;}
+.miaoContImgs image{width:196rpx;height:196rpx;margin:0 6rpx 6rpx 0;vertical-align:top;}
+.miaoContTime{font-size:30rpx;padding:6rpx 0 0 98rpx;}
+.miaoCont{padding:0 0 20rpx 0;border-bottom:1rpx solid #eee;width:710rpx;margin:0 0 20rpx 0;}
+.miaoCont:last-child{margin:0;border:0;}
+.photoDiv{border:0;background:rgba(0,0,0,0);padding:0;display:inline-block;border-radius:0;}
+.popup{z-index:90000;position:fixed;}
+.banner, .banner image{width:750rpx;height:600rpx;}
+.bannerText{font-size:30rpx;color:#444;text-align:center;padding:20rpx;width:710rpx;}
+.adressDiv{position:fixed;bottom:0;width:750rpx;z-index:10000;border-top:1rpx solid #eee;}

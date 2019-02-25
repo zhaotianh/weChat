@@ -1,0 +1,24 @@
+.Bsearch_input_text{font-size:30rpx;color:#222;line-height:96rpx;}
+page{background: #f4f4f4;}
+.zhanwei{height:200rpx;width:750rpx;}
+.supply_bot image{width:34rpx;height:34rpx;vertical-align:top;margin:26rpx 20rpx 0 0;}
+.supply_bot view{width:50%;height:84rpx;line-height:84rpx;text-align:center;font-size:26rpx;color:#444;}
+.supply_bot{background:#f5fdf2;}
+.supplycont{width:100%;}
+.supplyimg{width:190rpx;height:156rpx;}
+.supplyCont11{width:470rpx;}
+.supplycont{padding:20rpx;margin:0 auto 25rpx auto;width:660rpx;float:none;}
+.buyList{width:750rpx;}
+.supply_adress{padding-bottom:8rpx;}
+.supply_title{line-height:48rpx;height:48rpx;}
+.supply_shop{margin:4rpx 0 0 0;}
+.supply_Gg{padding-bottom:8rpx;}
+.supply_price{padding-bottom:0;}
+.supply_bot{width:100%;background:#fff;border-top:1rpx dashed #eee;margin:20rpx 0 0 0;padding:20rpx 0 0 0;}
+.supply_bot view{border:1rpx solid #ccc;padding:0 20rpx;width:auto;height:auto;line-height:50rpx;font-size:24rpx;border-radius:12rpx;margin:0 0 0 80rpx;}
+.supply_bot .shuaxin{border-color:#45d382;background:#f0fef6;color:#45d382;}
+.supply_bot .shuaxina{color:#fff;background:#45d382;border-color:#45d382;padding:0 32rpx;}
+.supply_bot .bianJ{border-color:#36c4ff;background:#f3fcff;color:#36c4ff;}
+.supply_bot .shanC{border-color:#de4e47;background:#fef3f0;color:#de4e47;}
+.header_sx{height:74rpx;line-height:74rpx;width:100%;background:#daf9e2;position:fixed;z-index:10;text-align:center;top:100rpx;font-size:26rpx;color:#565255;}
+.header_sx text{color:#13a853;}

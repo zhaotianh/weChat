@@ -1,0 +1,140 @@
+<!--html提示--> 
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<!-- 地址选择器 -->
+<view class='adressDiv'>
+  <van-area area-list="{{ addressListData }}" columns-num="{{ 2 }}" title="地址选择" visible-item-count="6" bind:confirm="con" bind:cancel="close" wx:if="{{adressDiv}}"/>
+</view>
+<!-- 规格选择 -->
+<van-popup show="{{ show }}" bind:close="onClose">
+  <view class="box">
+    <view class='boxTitle'>请选择精确规格</view>
+    <van-checkbox-group value="{{ result }}" bind:change="onChange">
+      <van-cell-group >
+        <van-cell wx:for="{{ list }}" wx:key="index" title="  {{ item }}   (厘米)" clickable data-name="{{ item }}" bind:click="toggle" style='z-index:1' >
+          <van-checkbox  catch:tap="noop" class="checkboxes-{{ item }}" name="{{ item }}" style='z-index:-100'/>
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+    <view class='boxBtn' bindtap='gGList'>确定</view>
+  </view>
+</van-popup>
+<!-- 规格内容发布 -->
+<view class='fbHeader clearfix'>
+  <image src="../../../images/fb_xing_03.png" class='fbX fl'></image>
+  <view class='fbHeaderMid fl clearfix'>
+    <view class='fbHeaderMidImg fl' wx:for="{{attas}}" wx:key="{{index}}">
+      <image src="{{item.path}}?x-oss-process=image/resize,m_lfit,w_140/crop,g_center,h_116" class='fbHeaderMidImg_img'></image>
+      <image src="../../../images/fbClear.png" class='fbHeaderMidImg_close' bindtap='clearImg' data-imgInd='{{item.sort}}'></image>
+    </view>
+    <view class='fl' wx:if="{{attas.length<9}}"><image src='../../../images/imgFb_03.png' class='fBBtn' bindtap='chooseImg'></image></view>
+    <text class='fl fbHeaderText' wx:if='{{imgTextFlag}}'>(一次可添加多张图片，封面默认为第一张图,最多能传九张,空白图片为上传失败）</text>
+  </view>
+</view>
+<!-- 规格内容发布 -->
+<view class='fbCont'>
+  <view class='clearfix fbContLabel'>
+    <image src="../../../images/fb_xing_03.png" class='fbX'></image>
+    <text class='fbContText'>品种名称</text>
+    <input placeholder='请输入苗木品种名称' class='fbContInput' value='{{productName}}' bindinput='productName'></input>
+  </view>
+  <view class='ggView'>
+    <view class='clearfix ggViewP' wx:if='{{xJFlag}}'>
+      <image src="../../../images/fbClear.png" class='fl ggViewClear' bindtap='gGclear' data-gg='胸径'></image>
+      <view class='fl ggNmae word_q'>胸径</view>
+      <input class='fl' placeholder='请输入'  type="digit" value='{{xJing}}' bindinput='xJing' maxlength='4'></input>
+      <view class='fl'>至</view>
+      <input class='fl' placeholder='请输入' value='{{xJing1}}' bindinput='xJing1' maxlength='4' type="digit"></input>
+      <view class='fl'>厘米</view>
+    </view>
+    <view class='clearfix ggViewP' wx:if='{{mJFlag}}'>
+      <image src="../../../images/fbClear.png" class='fl ggViewClear' bindtap='gGclear' data-gg='米径'></image>
+      <view class='fl ggNmae word_q'>米径</view>
+      <input class='fl' placeholder='请输入' value='{{mJing}}' bindinput='mJing' maxlength='4' type="digit"></input>
+      <view class='fl'>至</view>
+      <input class='fl' placeholder='请输入' value='{{mJing1}}' bindinput='mJing1' maxlength='4' type="digit"></input>
+      <view class='fl'>厘米</view>
+    </view>
+    <view class='clearfix ggViewP' wx:if='{{dJFlag}}'>
+      <image src="../../../images/fbClear.png" class='fl ggViewClear' bindtap='gGclear' data-gg='地径'></image>
+      <view class='fl ggNmae word_q'>地径</view>
+      <input class='fl' placeholder='请输入' value='{{dJing}}' bindinput='dJing' maxlength='4' type="digit"></input>
+      <view class='fl'>至</view>
+      <input class='fl' placeholder='请输入' value='{{dJing1}}' bindinput='dJing1' maxlength='4' type="digit"></input>
+      <view class='fl'>厘米</view>
+    </view>
+    <view class='clearfix ggViewP' wx:if='{{sgFlag}}'>
+      <image src="../../../images/fbClear.png" class='fl ggViewClear' bindtap='gGclear' data-gg='树高'></image>
+      <view class='fl ggNmae word_q'>树高</view>
+      <input class='fl' placeholder='请输入' value='{{sGao}}' bindinput='sGao' maxlength='4' type="digit"></input>
+      <view class='fl'>至</view>
+      <input class='fl' placeholder='请输入' value='{{sGao1}}' bindinput='sGao1' maxlength='4' type="digit"></input>
+      <view class='fl'>厘米</view>
+    </view>
+    <view class='clearfix ggViewP' wx:if='{{gfFlag}}'>
+      <image src="../../../images/fbClear.png" class='fl ggViewClear' bindtap='gGclear' data-gg='冠幅'></image>
+      <view class='fl ggNmae word_q'>冠幅</view>
+      <input class='fl' placeholder='请输入' value='{{guanFu}}' bindinput='gFuInput' maxlength='4' type="digit"></input>
+      <view class='fl'>至</view>
+      <input class='fl' placeholder='请输入' value='{{guanFu1}}' bindinput='gFu1Input' maxlength='4' type="digit"></input>
+      <view class='fl'>厘米</view>
+    </view>
+    <view class='clearfix ggViewP' wx:if='{{fzdgFlag}}'>
+      <image src="../../../images/fbClear.png" class='fl ggViewClear' bindtap='gGclear' data-gg='分支点高'></image>
+      <view class='fl ggNmae word_q'>分支点高</view>
+      <input class='fl' placeholder='请输入' value='{{fzGd}}' bindinput='fzGd' maxlength='4' type="digit"></input>
+      <view class='fl'>至</view>
+      <input class='fl' placeholder='请输入' value='{{fzGd1}}' bindinput='fzGd1' maxlength='4' type="digit"></input>
+      <view class='fl'>厘米</view>
+    </view>
+  </view>
+  <view class='clearfix fbContLabel1' wx:if="{{(gGList.length!=list.length)}}">
+    <image src="../../../images/fb_xing_03.png" class='fbX fl'></image>
+    <view class='fl ggBtn' bindtap='onOpen'>添加精准规格</view>
+  </view>
+</view>
+<!-- 规格内容发布 -->
+<view class='fbCont'>
+  <view class='clearfix fbContLabel'>
+    <image src="../../../images/fb_xing_03.png" class='fbX'></image>
+    <text class='fbContText'>供应数量</text>
+    <input placeholder='请输入供应数量' class='fbContInput fbContInput1' value='{{quantity}}' bindinput='quantity' maxlength='6' type="digit"></input>
+    <view class='fbContDw' bindtap='dWflag'>{{unit}}<image src="../../../images/chooseFb_03.png"></image></view>
+  </view>
+  <view class='fbContLabel fbContLabelDw' wx:if="{{dWflag}}">
+    <text class='{{(num==index)?"active":""}}' wx:for="{{dWList}}" wx:key="{{index}}" bindtap='chooseDw' data-num='{{index}}' data-dw='{{item}}'>{{item}}</text>
+  </view>
+  <view class='clearfix fbContLabel'>
+    <image src="../../../images/fb_xing_03.png" class='fbX'></image>
+    <text class='fbContText'>价格</text>
+    <input placeholder='请输入' class='fbContInput fbContInput2' value='{{price}}' bindinput='price' maxlength='6' type="digit"></input>
+    -
+    <input placeholder='请输入' class='fbContInput fbContInput2' value='{{price1}}' bindinput='price1' maxlength='6' type="digit"></input>
+    <text class='fbContDw1'>{{unit}}/元</text>
+  </view>
+  <view class='clearfix'>
+    <text class='fbContText' style='padding:0 0 0 24rpx;'>备注</text>
+    <input placeholder='请输入备注说明' class='fbContInput' value='{{demand}}' bindinput='demand'></input>
+  </view>
+</view>
+<!-- 规格内容发布 -->
+<view class='fbCont'>
+  <view class='clearfix fbContLabel'>
+    <image src="../../../images/fb_xing_03.png" class='fbX'></image>
+    <text class='fbContText'>供苗人</text>
+    <input placeholder='请输入供苗人' class='fbContInput ' value='{{linkman}}' bindinput='linkman'></input>
+  </view>
+  <view class='clearfix fbContLabel'>
+    <image src="../../../images/fb_xing_03.png" class='fbX'></image>
+    <text class='fbContText'>联系电话</text>
+    <input placeholder='请输入联系电话' class='fbContInput ' value='{{phone}}' bindinput='phone' maxlength='11' type="digit"></input>
+  </view>
+  <view class='clearfix'>
+    <image src="../../../images/fb_xing_03.png" class='fbX'></image>
+    <text class='fbContText'>供苗地址</text>
+    <input placeholder='请选择供苗地址' disabled class='fbContInput 'value='{{aeraView}}' bindinput='aeraView' bindtap='open'></input>
+  </view>
+</view>
+<view class='zhanwei'></view>
+<!-- 发布提交按钮 -->
+<view class='FbLjBtn' bindtap='subMit'>{{btnText}}</view>

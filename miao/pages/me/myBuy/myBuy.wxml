@@ -1,0 +1,28 @@
+<!-- html提示 -->
+<van-notify id="van-notify" /> 
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<!-- 头部 -->
+<view class='Bheader clearfix'>
+  <view class='Bsearch_input fl' style='margin:20rpx 30rpx 20rpx 50rpx;'><image src='../../../images/search.png'></image> <input placeholder='请输入搜索的内容' bindblur='search' value='{{input}}'></input></view>
+  <text class='fl Bsearch_input_text' bindtap='searchClick'>搜索</text>
+</view>
+<view class='header_sx'>今日剩余刷新次数：<text>{{shaXNum}}次</text></view>
+<!-- 站位 --> 
+<view class='zhanwei'></view>
+<!-- 供应列表 -->
+<view class='noHave'  wx:if="{{noHave}}"><image src="../../../images/noHave.png"></image></view>
+<view class='buyList clearfix'wx:else>
+  <view class='buyCont' wx:for="{{buyList}}" wx:key="{{index}}" bindtap='buyUrl' data-proId='{{item.buyId}}'>
+    <view class='buy_Title'><text class='{{item.quantity?"word_1 buy_Title1":"word_1 buy_Title1 buyWidth"}}'>{{item.productName}}</text><text class='buyNum' wx:if="{{item.quantity}}">{{item.quantity}}棵</text></view>
+    <view class='buyGg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+    <view class='buyAdress word_1'><text>采购区域：</text>{{item.areaView}}<view class='buyTime fr'><image src='../../../images/time.png'></image>{{item.buyTime}}</view></view>
+    <view class='clearfix supply_bot'>
+      <view class='fl shuaxin' wx:if="{{!item.shaX}}" catchtap='shuaX' data-supplyId='{{item.buyId}}'>一键刷新</view>
+      <view class='fl shuaxina' wx:if="{{item.shaX}}">已刷新</view>
+      <view class='fl bianJ' catchtap='bJsupply' data-supplyId='{{item.buyId}}'>编辑</view>
+      <view class='fl shanC' catchtap='dele' data-supplyId='{{item.buyId}}'>删除</view>
+    </view>
+  </view>
+</view>
+<view class='loadingText' wx:if="{{loading}}"><image src="../../../images/loading.gif" class='loading'></image></view>

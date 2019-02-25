@@ -1,0 +1,19 @@
+<!-- html提示 -->
+<van-notify id="van-notify" />
+<!-- 头部代码 -->
+<view class='Bheader clearfix'>
+  <view class='Bsearch_input fl'><image src='../../images/search.png'></image> <input placeholder='请输入搜索的内容' bindtap='search'></input> </view>
+  <view class='bg fl'></view>
+</view>
+<!-- 求购列表 -->
+<view class='noHave'  wx:if="{{noHave}}"><image src="../../images/noHave.png"></image></view>
+<view class='buyList clearfix'wx:else>
+  <view class='buyCont' wx:for="{{buyList}}" wx:key="{{index}}"  bindtap='buyUrl' data-proId='{{item.buyId}}'>
+    <view class='buy_Title'><text class='{{item.quantity?"word_1 buy_Title1":"word_1 buy_Title1 buyWidth"}}'>{{item.productName}}</text><text class='buyNum' wx:if="{{item.quantity}}">{{item.quantity}}棵</text></view>
+    <view class='buyGg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+    <view class='buyAdress word_1'><text>用苗地：</text>{{item.areaView}}</view>
+    <view class='buyTime'><image src='../../images/time.png'></image>{{item.buyTime}}</view>
+  </view>
+</view>
+<!-- 加载动画 -->
+<view class='loadingText' wx:if="{{loading}}"><image src="../../images/loading.gif" class='loading'></image></view>

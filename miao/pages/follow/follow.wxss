@@ -1,0 +1,12 @@
+/* pages/follow/follow.wxss */
+page{background:#f3f3f3;}
+.followCont{border-top:1rpx solid #eee;padding:25rpx 0;background:#fff;}
+.followContImg image{width:100rpx;height:100rpx;border-radius:50%;}
+.followContImg{width:100rpx;height:100rpx;padding:0 25rpx;}
+.followAdress image{width:24rpx;height:28rpx;vertical-align:top;margin:0 10rpx 0 0;}
+.followText{width:380rpx;margin:0 30rpx 0 0;}
+.followName{font-size:30rpx;line-height:60rpx;}
+.followAdress{font-size:28rpx;line-height:28rpx;color:#777;}
+.qxFollow{font-size:28rpx;border:1rpx solid #eee;padding:10rpx 22rpx;line-height:30rpx;margin:24rpx 0 0 0;border-radius:10rpx;color:#888;}
+.followConts{padding:0 0 50rpx 0;}
+

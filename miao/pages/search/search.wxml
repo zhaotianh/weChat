@@ -1,0 +1,50 @@
+  <!-- 搜索头部 -->
+  <van-toast id="van-toast" /> 
+<scroll-view scroll-y style="height:{{height}}px;"class='supplyBuy clearfix' bindscrolltolower="lower" bindscroll="con">
+    <view class='clearfix header'> 
+    <view class='fl search'><image src='../../images/search.png' class='seachImg'></image><input value="{{input}}" bindfocus="clear"  bindinput='value' placeholder='请输入搜索关键词'></input><image src='../../images/searchClear.png' class='seachImg1' bindtap='clear'></image></view>
+    <text class='fl searchText' bindtap='search'>搜索</text>
+  </view>
+  <!-- 导航部分 -->
+  <view class='clearfix nav'>
+    <view class='fl {{(num==0)?"active":""}}' data-ind='0' bindtap='nav'>供应</view>
+    <view class='fl {{(num==1)?"active":""}}' data-ind='1' bindtap='nav'>求购</view>
+  </view>
+  <!-- 填充空缺用 -->
+  <view class='searchKq'></view>
+  <view class='clearfix' wx:if="{{searchBtn}}" style='background:{{noHave?"#fff":"#eee"}};padding:{{(buyList.length==0)?"0":"25rpx 0 0 0"}};'>
+    <view class='supplycont' wx:for="{{buyList}}" wx:key="{{index}}" wx:if="{{num==0}}" bindtap='supplyUrl' data-proId='{{item.supplyId}}'>
+      <image src='{{(item.imgFlag||serollFlag)?item.attas[0].path+"?x-oss-process=image/resize,m_lfit,w_200/crop,g_center,h_152":"../../images/supplyLoading.png"}}' class='supplyimg'></image>
+      <view class='supply_title'><text class='supply_title1 word_1'>{{item.productName}}</text><image src='../../images/goShop.png'  class='supply_shop fr' wx:if="{{item.dataSourceId=='app'}}"></image></view>
+      <view class='supply_adress word_1'>{{item.areaView?item.areaView:"暂未维护"}}</view>
+      <view class='supply_Gg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+      <view class='supply_price'><text class='word_1'>{{(item.price!=0&&item.priceTwo!=0)?((item.price===item.priceTwo)?item.price+"元/棵":item.price+"-"+item.priceTwo+"元/棵"):"面议"}}</text><text class='supply_titleTime fr'>{{item.buyTime}}</text></view>
+    </view>
+    <view class='buyCont' wx:for="{{buyList}}" wx:key="{{index}}" wx:if="{{num==1}}"  bindtap='buyUrl' data-proId='{{item.buyId}}'>
+      <view class='buy_Title'><text class='{{item.quantity?"word_1 buy_Title1":"word_1 buy_Title1 buyWidth"}}'>{{item.productName}}</text><text class='buyNum' wx:if="{{item.quantity}}">{{item.quantity}}棵</text></view>
+      <view class='buyGg word_1'>规格：{{item.mijing!=0?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing!=0?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu!=0?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+      <view class='buyAdress word_1'><text>采购区域：</text>{{item.areaView}}</view>
+      <view class='buyTime'><image src='../../images/time.png'></image>{{item.buyTime}}</view>
+    </view>
+    <view wx:if="{{loading}}" style='background:{{(buyList.length==0)?"#fff":"#eee"}};padding:50rpx 0 0 0;'><image src='../../images/loading.gif' class='loading'></image></view>
+    <image src='../../images/nohaveS.png' wx:if="{{noHave}}" style='width:750rpx;height:635rpx;'></image>
+  </view>
+  <view wx:else>
+    <!-- 热门搜索 -->
+    <view class='hotSearch'>
+      <view class='hotSearchText'>热门搜索</view>
+      <view class='hotSearchCont clearfix'>
+        <text class='fl' wx:for="{{hotSearch}}" wx:key="{{index}}" bindtap='dataSerach' data-name='{{item}}'>{{item}}</text>
+      </view>
+    </view>
+    <!-- 历史搜索 -->
+    <view class='hotSearch'>
+      <view class='hotSearchText' style='background:#fff;'>历史搜索</view>
+      <view class='hotSearchCont clearfix' style='background:#fff;'>
+        <text class='fl' wx:for="{{oldData}}" wx:key="{{index}}" wx:if="{{item}}" bindtap='dataSerach' data-name='{{item}}'>{{item}}</text>
+      </view>
+    </view>
+    <view class='over' bindtap='over'>清空搜索历史</view>
+  </view>
+</scroll-view>
+

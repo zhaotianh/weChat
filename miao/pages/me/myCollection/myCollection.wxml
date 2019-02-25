@@ -1,0 +1,40 @@
+<!-- html提示 -->
+  <van-dialog id="van-dialog" />
+  <van-toast id="van-toast" />
+  <!-- 导航选择 -->
+  <view class='clearfix nav'>
+    <view class='fl {{(num==0)?"active":""}}' data-ind='0' bindtap='nav'>供应</view>
+    <text class='fl'></text>
+    <view class='fl {{(num==1)?"active":""}}' data-ind='1' bindtap='nav'>求购</view>
+  </view>
+  <view class='zhanwei'></view>
+  <view class='navDivs'>
+    <view class='navSupply' wx:if="{{num==0}}">
+      <view class='noHave'  wx:if="{{noHave}}"><image src="../../../images/noHave.png"></image></view>
+        <view class='buyList clearfix'wx:else>
+        <!-- 供应模板 -->
+          <view class='supplycont' wx:for="{{supplyList}}" wx:key="{{index}}" bindtap='supplyUrl' data-proId='{{item.supplyBuyId}}'>
+            <view class='supplySc1' catchtap='shoucQx' data-ind='supply' data-proId='{{item.supplyBuyId}}'><image src='../../../images/me_shouC.png' class='supplySc'></image></view>
+            <image src='{{(item.imgFlag||serollFlag)?item.attas[0].path+"?x-oss-process=image/resize,m_lfit,w_200/crop,g_center,h_152":"../../../images/supplyLoading.png"}}' class='supplyimg'></image>
+            <view class='supply_title'><text class='supply_title1 word_1'>{{item.productName}}</text><image src='../../../images/goShop.png'  class='supply_shop fr' wx:if="{{item.dataSourceId=='app'}}" catchtap='goShop' data-shopid='{{item.buySupplyPartyId}}'></image></view>
+            <view class='supply_adress word_1'>{{item.areaView?item.areaView:"暂未维护"}}</view>
+            <view class='supply_Gg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+            <view class='supply_price'><text class='word_1'>{{(item.price&&item.priceTwo)?((item.price===item.priceTwo)?item.price+"元/棵":item.price+"-"+item.priceTwo+"元/棵"):"面议"}}</text><text class='supply_titleTime fr'>{{item.buyTime}}</text></view>
+          </view>
+        </view>
+        <view class='loadingText' wx:if="{{loading}}"><image src="../../../images/loading.gif" class='loading'></image></view>
+    </view>
+    <view class='navBuy' wx:if="{{num==1}}">
+      <view class='noHave'  wx:if="{{buyNoHave}}"><image src="../../../images/noHave.png"></image></view>
+        <view class='buyList clearfix'wx:else>
+          <view class='buyCont' wx:for="{{buyList}}" wx:key="{{index}}" bindtap='buyUrl' data-proId='{{item.supplyBuyId}}'>
+          <view class='buySc1' catchtap='shoucQx' data-ind='buy'  data-proId='{{item.supplyBuyId}}'><image src='../../../images/me_shouC.png' class='buySc'></image></view>
+            <view class='buy_Title'><text class='{{item.quantity?"word_1 buy_Title1":"word_1 buy_Title1 buyWidth"}}'>{{item.productName}}</text><text class='buyNum' wx:if="{{item.quantity}}">{{item.quantity}}棵</text></view>
+            <view class='buyGg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+            <view class='buyAdress word_1'><text>采购区域：</text>{{item.areaView}}</view>
+            <view class='buyTime'><image src='../../../images/time.png'></image>{{item.buyTime}}</view>
+          </view>
+        </view>
+        <view class='loadingText' wx:if="{{buyLoading}}"><image src="../../../images/loading.gif" class='loading'></image></view>
+    </view>
+  </view>

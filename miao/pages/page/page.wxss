@@ -1,0 +1,2 @@
+/* pages/page/page.wxss */
+.home{position:fixed;width:100rpx;height:100rpx;background:red;border-radius:50%;font-size:30rpx;bottom:160rpx;right:50rpx;z-index: 1000;}

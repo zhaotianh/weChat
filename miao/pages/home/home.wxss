@@ -1,0 +1,33 @@
+/* pages/home/home.wxss */
+page{width:750rpx;}
+.banner, .bannerImg{width:750rpx;height:336rpx;}
+.login{width:102rpx;height:64rpx;background:rgba(0,0,0,0);border:0;padding:0;border-radius:0;}
+.login image{width:46rpx;height:64rpx;padding:0 26rpx 0 30rpx;}
+.me_info{width:48rpx;height:62rpx;margin:0  0 0 26rpx ;}
+.header{position:relative;}
+.searchDiv{position:fixed;top:0;left:0;z-index:1;width:750rpx;padding:20rpx 0;transition:0.5s;color:#b0b0b0;}
+.search{width:554rpx;background:rgba(255,255,255,0.9);height:64rpx;border-radius:40rpx;transition: 0.5s;}
+.searchInput{font-size:26rpx;width:450rpx;display:inline-block;vertical-align:top;line-height:64rpx;height:64rpx;padding:0 0 0 30rpx;transition: 0.5s;}
+.search image{width:46rpx;height:46rpx;margin:8rpx 0 0 10rpx;}
+page{background:#f2f2f2;}
+.new{width:750rpx;height:130rpx;background:#fff;}
+.newLeft, .newLeft image{width:150rpx;height:130rpx;}
+.newRight, .newRightItem{width:600rpx;height:130rpx;}
+.newRightp .new_title{font-size:20rpx;color:#ff7e00;border:0.6rpx solid #ff7e00;padding:5rpx 6rpx;margin:0 16rpx;border-radius:8rpx;vertical-align:top;display:inline-block;}
+.newRightp .new_title1{font-size:20rpx;color:#3eb3ff;border:0.6rpx solid #3eb3ff;padding:5rpx 6rpx;margin:0 16rpx;border-radius:8rpx;vertical-align:top;display:inline-block;}
+.newRightp{margin:20rpx 0 0 0;height:40rpx;}
+.new_cont{width:494rpx;padding:0 4rpx;vertical-align:top;display:inline-block;font-size:25rpx;line-height:38rpx;height:40rpx;color:#666;}
+.supplyBuy image{width:358rpx;height:210rpx;}
+.supplyBuy view{margin:20rpx 0 20rpx 12rpx;height:210rpx;}
+.buyTitle{height:84rpx;padding:0 20rpx 0 20rpx;line-height:84rpx;border-bottom:0.6rpx solid #eee;background:#fff;max-width:750rpx;}
+.buyTitle image{width:30rpx;height:30rpx;vertical-align:top;margin:28rpx 8rpx 0 0;font-size:29rpx;}
+.buyTitle text{color:#ff4229;}
+.buyMore{font-size:24rpx;}
+.buyMore image{height:30rpx;width:10rpx;margin:28rpx 10rpx 0 10rpx;}
+.supplyTitle text{color:#00c9a3;}
+.scrollHeight{height:1550rpx}
+.loading{margin:30rpx auto;}
+.mask{background:rgba(0,0,0,0.6);position:fixed;top:0;bottom:0;z-index:10000000;font-size:30rpx;line-height:200rpx;text-align:center;}
+.home_btn{width:600rpx;height:600rpx;margin:auto;position:absolute;left:0;top:0;bottom:0;right:0;background:#fff;}
+.homeBtn{background:orange;color:#fff;margin:200rpx auto 0 auto;width:300rpx;}
+.loginImg{width:62rpx;height:62rpx;margin:0 20rpx 0 20rpx;border-radius:50%;}

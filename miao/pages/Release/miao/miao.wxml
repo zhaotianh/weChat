@@ -1,0 +1,23 @@
+<!-- html提示--> 
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<!-- 地址选择 -->
+<view class='adressDiv'>
+  <van-area area-list="{{ addressListData }}" columns-num="{{ 2 }}" title="地址选择" visible-item-count="6" bind:confirm="con" bind:cancel="close" wx:if="{{adressDiv}}"/>
+</view>
+<view class='fbHeader clearfix'>
+<!-- 苗友圈发布 -->
+  <textarea placeholder='分享你的苗圃趣事吧~'class="textarea" bindinput='input'></textarea>
+  <view class='fbHeaderMid fl clearfix'>
+    <view class='fbHeaderMidImg fl' wx:for="{{attas}}" wx:key="{{index}}">
+      <image src="{{item.path}}?x-oss-process=image/resize,m_lfit,w_140/crop,g_center,h_116" class='fbHeaderMidImg_img'></image>
+      <image src="../../../images/fbClear.png" class='fbHeaderMidImg_close' bindtap='clearImg' data-imgInd='{{item.sort}}'></image>
+    </view>
+    <view class='fl' wx:if="{{attas.length<9}}"><image src='../../../images/imgFb_03.png' class='fBBtn' bindtap='chooseImg'></image></view>
+  </view>
+  <view class='adress fl'>
+    <image src='../../../images/adress.png'></image><text bindtap='open'>{{adress}}</text>
+  </view>
+</view>
+<!-- 发布按钮 -->
+<view class='FbLjBtn' bindtap='subMit'>立即发布</view>

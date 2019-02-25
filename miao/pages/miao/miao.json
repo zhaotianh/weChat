@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-toast": "../../dist/toast/index",
+    "van-popup": "../../dist/popup/index",
+    "van-area": "../../dist/area/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "苗友圈"
+}

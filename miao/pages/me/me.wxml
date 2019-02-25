@@ -1,0 +1,43 @@
+<van-toast id="van-toast" />
+<view class='header'>
+  <view class='clearfix header_top'>
+    <!-- <image src="../../images/me_sz.png" class='me_sz'></image> -->
+    <image src="../../images/info.png" wx:if="{{info}}" class='me_info fl'></image>
+    <image src="../../images/infoH.png" wx:else class='me_info fl'></image>
+  </view>
+  <view class='clearfix header_bot'>
+    <button wx:if="{{!login}}" class='fl header_photo' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" ><image src="../../images/photo.png"></image></button>
+    <view wx:else class='fl header_photo'><image src="{{loginImg}}"></image></view>
+    <view class='fl'>
+      <view class='me_name'><text>{{name}}</text><image src="../../images/me_bj.png"></image></view>
+      <view class='me_phone'>{{phone}}</view>
+    </view>
+  </view> 
+</view>
+<!-- 导航部分 -->
+<view class='me_nav clearfix'>
+  <view class='fl' bindtap='supply'><image src='../../images/me_supply.png'></image></view>
+  <view class='fr' bindtap='buy'><image src='../../images/me_buy.png'></image></view>
+</view>
+<view class='me_nav1'>
+  <view class='border' bindtap='fBsupply'><image src='../../images/meIcon1.png' class='me_icon'></image>发布供应<image src='../../images/me_arrow.png' class='me_icon1'></image></view>
+  <view  bindtap='fBbuy'><image src='../../images/meicon2.png' class='me_icon'></image>发布求购<image src='../../images/me_arrow.png' class='me_icon1'></image></view>
+</view>
+<view class='me_nav1'>
+  <view class='border' bindtap='fBShouc'><image src='../../images/me_shouC.png' class='me_icon'></image>我的收藏<image src='../../images/me_arrow.png' class='me_icon1'></image></view>
+  <view  bindtap='fBGzhu'><image src='../../images/me_gzhu.png' class='me_icon'></image>我的关注<image src='../../images/me_arrow.png' class='me_icon1'></image></view>
+</view>
+<view class='me_nav1'>
+  <view bindtap='show'><image src='../../images/meicon4.png' class='me_icon'></image>联系客服<image src='../../images/me_arrow.png' class='me_icon1'></image></view>
+</view>
+<!-- 客服弹框 -->
+<view class='me_masx' style='width:{{width}}px;height:{{height}}px;' wx:if="{{maskFlag}}">
+  <view class='me_kf'>
+    <view class='me_kf_top'>
+      <image src="../../images/me_kf.png"></image>
+      <view class='me_btn' bindtap='phone'>拨打客服热线</view>
+      <view class='me_btn1' bindtap='copyBtn'>微信：19963985873</view>
+    </view>
+    <image src="../../images/meClose.png" class='me_close' bindtap='close'></image>
+  </view>
+</view>

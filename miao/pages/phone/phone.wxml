@@ -1,0 +1,7 @@
+<van-notify id="van-notify" /> 
+<van-toast id="van-toast" />
+<view class='phoneDiv' style='border-top:1rpx solid #f1f1f1;'><input placeholder='请输入您要绑定的手机号' type='number' value='{{phone}}' bindinput="phone"></input></view>
+<view class='phoneDiv phoneDiv1'><input placeholder='请输入手机验证码' type='number' value='{{phoneYz}}'bindinput="phoneYz"></input><text bindtap='phoneDx'>{{phoneText}}</text></view>
+<view class='phoneDiv'><input placeholder='请输入您要设置的密码' type='password' value='{{password}}'bindinput="password"></input></view>
+<view class='phoneDiv'><input placeholder='请输入再次输入密码' type='password' value='{{passwordTwo}}'bindinput="passwordTwo"></input></view>
+<view class='phoneBtn' bindtap='bangD'>绑定</view>

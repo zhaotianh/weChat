@@ -1,0 +1,22 @@
+.header{padding:20rpx 0;border-bottom:0.5rpx solid #eee;background:#eee;position:fixed;top:0;left:0;width:750rpx;z-index:100;}
+.back{padding:0 20rpx;margin:8rpx 20rpx 0 12rpx;}
+.back image{width: 27rpx;height: 50rpx;}
+.search{background:#fff;width: 600rpx;height: 62rpx;border-radius: 31rpx;margin:0 0 0 30rpx;}
+.search image{width:40rpx;height:40rpx;vertical-align:top;}
+.seachImg{padding:12rpx 0 0 32rpx;}
+.seachImg1{padding:12rpx 0 0 10rpx;}
+.search input{width:450rpx;height:62rpx;line-height:62rpx;vertical-align:top;display:inline-block;padding:0 0 0 10rpx;font-size:28rpx;}
+.searchText{height:62rpx;line-height:62rpx;margin:0 0 0 30rpx;color: #222222;font-size:30rpx;}
+.nav{width:750rpx;height:92rpx;background:#fff;position:fixed;top:102rpx;left:0;z-index:100;}
+.nav view{width:375rpx;text-align:center;line-height:91rpx;border-bottom:1rpx solid rgba(0,0,0,0);font-size:34rpx;color:#222;}
+.nav .active{color: #59cd5e;border-bottom:1rpx solid #59cd5e;}
+.hotSearchText{color:#333;font-size:30rpx;padding:32rpx 0 22rpx 34rpx;background:#fafafa;}
+.hotSearch text{border-radius: 10rpx;border: solid 1rpx #ccc;padding:10rpx 28rpx;font-size:30rpx;color:#666;margin:0 10rpx 20rpx 10rpx;}
+.hotSearchCont{padding:0 30rpx;background:#fafafa;}
+.hotSearch{padding:0 0 20rpx 0;}
+.over{text-align:center;padding:56rpx 0 0 0;font-size:30rpx;color:#444;}
+.supplyBuy{background:#fff;}
+.searchKq{width:750rpx;height:193rpx;}
+
+
+

@@ -1,0 +1,11 @@
+<van-dialog id="van-dialog" style="z-index:10000000000;" />
+<van-toast id="van-toast" />
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+  <van-cell-group>
+    <van-cell wx:for="{{dataList}}" wx:key="{{index}}" title="{{item}}" clickable data-name="{{index}}" bind:click="onClick">
+      <van-radio name="{{index}}" />
+    </van-cell>
+  </van-cell-group>
+</van-radio-group>
+<textarea value='{{content}}' placeholder='请输入举报详情...' class='textJb' bindinput='input' ></textarea>
+<view class='juBtn' bindtap='juB'>确认举报</view>

@@ -1,0 +1,3 @@
+/* pages/report/report.wxss */
+.textJb{width:660rpx;height:180rpx;margin:40rpx auto;border:1rpx solid #eee;font-size:28rpx;padding:20rpx;}
+.juBtn{width:600rpx;height:60rpx;background:#ff981f;color:#fff;line-height:60rpx;position:fixed;bottom:60rpx;left:0;right:0;margin:auto;text-align:center;font-size:28rpx;}

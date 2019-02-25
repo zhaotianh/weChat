@@ -1,0 +1,10 @@
+<van-notify id="van-notify" /> 
+<van-toast id="van-toast" />
+<view class='noHave'  wx:if="{{(newList.length==0)&&!loading}}"><image src="../../images/noHave.png"></image></view>
+<view class='newConts' wx:else>
+  <view class='newCont' wx:for="{{newList}}" wx:key="{{index}}" data-newid='{{item.articleId}}' bindtap='newPage'>
+    <view class='newTitle word_1'>{{item.title}}</view>
+    <view class='newTime'>{{item.createdDate}}</view>
+  </view>
+</view>
+<view class='loadingText' wx:if="{{loading}}"><image src="../../images/loading.gif" class='loading'></image></view>

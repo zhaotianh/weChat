@@ -1,0 +1,14 @@
+.phoneDiv{width:750rpx;height:110rpx;line-height:110rpx;border-bottom:1rpx solid #f1f1f1;}
+.phoneDiv input{width:600rpx;padding:0 0 0 50rpx;height:110rpx;line-height:110rpx;font-size:30rpx;}
+.phoneDiv1 input{width:400rpx;margin:0 50rpx 0 0;display:inline-block;vertical-align:top;}
+.phoneDiv1 text{font-size:26rpx;text-align:center;display:inline-block;vertical-align:top;border:1rpx solid #21ca79;line-height:60rpx;margin:25rpx 0 0 0;color:#21ca79;padding:0 20rpx;border-radius:30rpx;}
+.phoneBtn{line-height:96rpx;margin:100rpx auto;text-align:center;font-size:30rpx;background:linear-gradient(120deg,#00c49d 0%,#11c78b 53%, #21ca79 100%),linear-gradient(#757575,#757575);width: 394rpx;
+	height: 96rpx;color:#fff;border-radius:48rpx;}
+
+
+
+
+
+
+
+

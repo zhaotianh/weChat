@@ -1,0 +1,33 @@
+page{background:#f4f4f4;}
+.fbX{width:14rpx;height:14rpx;margin:0 10rpx 0 0;} 
+/* 地址选择部分样式 */
+.adressDiv{position:fixed;bottom:0;width:750rpx;z-index:10000;}
+.fbContLabelDw .active{color:#24ba8e;border:1rpx solid #24ba8e;}
+.fbCont{background:#fff;margin-bottom:20rpx;padding:20rpx;width:710rpx;}
+.fbCont image, .fbCont input, .fbCont text{vertical-align:top;}
+.fbCont .fbX{padding:28rpx 0 0 0;}
+.fbContInput{line-height:70rpx;height:70rpx;width:400rpx;display:inline-block;font-size:28rpx;}
+.fbContText{line-height:70rpx;height:70rpx;width:200rpx;display:inline-block;font-size:28rpx;}
+.fbContLabel{border-bottom:1rpx solid #eee;}
+.ggBtn{width:300rpx;height:70rpx;line-height:70rpx;background-color:#daf9ee;border-radius: 34rpx;color: #24ba8e;font-size:28rpx;text-align:center;}
+.fbContLabel1{padding:20rpx 0;}
+/* 规格输入部分样式 */
+.ggViewClear{width:38rpx;height:38rpx;margin:18rpx 40rpx 0 40rpx;}
+.ggNmae{width:140rpx;display:inline-block;vertical-align:top;}
+.ggkg{width:58rpx;display:inline-block;vertical-align:top;}
+.ggViewP{font-size:28rpx;line-height:70rpx;height:70rpx;border:1rpx solid #eee;border-radius:14rpx;margin:20rpx 0 0 0;}
+.ggViewP input{width:120rpx;vertical-align:top;line-height:70rpx;height:70rpx;margin:0 20rpx;text-align:center;}
+.fbContDw{display:inline-block;font-size:28rpx;padding:14rpx 0 0 0;}
+.fbContDw image{width:30rpx;height:30rpx;vertical-align:top;margin:6rpx 6rpx 0 6rpx;}
+.fbContInput1{width:360rpx;}
+.fbContInput2{width:162rpx;}
+.fbContDw1{font-size:28rpx;line-height:70rpx;height:70rpx;vertical-align:top;}
+/* 发布按钮样式 */
+.FbLjBtn{font-size:30rpx;line-height:84rpx;height:84rpx;text-align:center;position:fixed;bottom:0;left:0;background:#24ba8e;width:750rpx;color:#fff;z-index:10;}
+.zhanwei{width:750rpx;height:50rpx;}
+.fbContLabelDw{padding:20rpx 0;}
+.fbContLabelDw text{border:1rpx solid #eee;font-size:28rpx;line-height:70rpx;height:70rpx;vertical-align:top;padding:2rpx 26rpx;border-radius:10rpx;margin:0 10rpx;color:#333;}
+/*复选框*/
+.box{width:600rpx;}
+.boxTitle{line-height:90rpx;text-align:center;font-size:34rpx;}
+.boxBtn{font-size:30rpx;line-height:84rpx;height:84rpx;text-align:center;background:#24ba8e;width:100%;color:#fff;z-index:10;margin:20rpx 0 0 0;}

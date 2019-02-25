@@ -1,0 +1,8 @@
+{
+  "usingComponents": { 
+    "van-toast": "../../dist/toast/index",
+    "van-popup": "../../dist/popup/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "苗源网"
+}

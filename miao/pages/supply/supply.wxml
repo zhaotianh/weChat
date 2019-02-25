@@ -1,0 +1,19 @@
+<van-notify id="van-notify" />
+<!-- 头部 -->
+<view class='Bheader clearfix'>
+  <view class='Bsearch_input fl'><image src='../../images/search.png'></image> <input placeholder='请输入搜索的内容' bindtap='search'></input> </view>
+  <view class='bg fl'></view>
+</view>
+<!-- 供应列表 -->
+<view class='noHave'  wx:if="{{noHave}}"><image src="../../images/noHave.png"></image></view>
+<view class='buyList clearfix'wx:else>
+<!-- 供应模板 -->
+  <view class='supplycont' wx:for="{{buyList}}" wx:key="{{index}}" bindtap='supplyUrl' data-proId='{{item.supplyId}}'>
+    <image src='{{(item.imgFlag||serollFlag)?item.attas[0].path+"?x-oss-process=image/resize,m_lfit,w_200/crop,g_center,h_152":"../../images/supplyLoading.png"}}' class='supplyimg'></image>
+    <view class='supply_title'><text class='supply_title1 word_1'>{{item.productName}}</text><image src='../../images/goShop.png'  class='supply_shop fr' wx:if="{{item.dataSourceId=='app'}}" catchtap='goShop' data-shopid='{{item.partyId}}'></image></view>
+    <view class='supply_adress word_1'>{{item.areaView?item.areaView:"暂未维护"}}</view>
+    <view class='supply_Gg word_1'>规格：{{item.mijing?"米径："+item.mijing+"-"+item.mijingtwo+"；":"米径：无；"}}{{item.dijing?"地径："+item.dijing+"-"+item.dijingtwo+"；":"地径：无；"}}{{item.guanfu?"冠幅："+item.guanfu+"-"+item.guanfutwo+"；":"冠幅：无；"}}</view>
+    <view class='supply_price'><text class='word_1'>{{(item.price!=0&&item.priceTwo!=0)?((item.price===item.priceTwo)?item.price+"元/棵":item.price+"-"+item.priceTwo+"元/棵"):"面议"}}</text><text class='supply_titleTime fr'>{{item.buyTime}}</text></view>
+  </view>
+</view>
+<view class='loadingText' wx:if="{{loading}}"><image src="../../images/loading.gif" class='loading'></image></view>

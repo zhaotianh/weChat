@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-popup": "../../../dist/popup/index",
+    "van-checkbox": "../../../dist/checkbox/index",
+    "van-checkbox-group": "../../../dist/checkbox-group/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "van-toast": "../../../dist/toast/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-area": "../../../dist/area/index"
+  },
+  "navigationBarTitleText": "求购发布"
+}

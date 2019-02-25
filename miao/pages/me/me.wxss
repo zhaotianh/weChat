@@ -1,0 +1,42 @@
+.header{width:750rpx;height:332rpx;background:url('https://miaoyuan-microapp.oss-cn-beijing.aliyuncs.com/SourceMaterial/meBg.png') no-repeat;background-size:750rpx 332rpx;margin:0 0 20rpx 0;}
+.header_top{padding:30rpx 0 0 0;}
+.me_sz{width:44rpx;height:62rpx;margin:0 0 0 30rpx;}
+.me_info{width:48rpx;height:62rpx;margin:0  0 0 30rpx ;}
+.header_photo image{width:126rpx;height:126rpx;border-radius:50%;}
+.header_photo{background:rgba(0,0,0,0);border:0;padding:0;border-radius:0;}
+.header_bot{margin:40rpx 0 0 74rpx;}
+.me_name image{width:40rpx;height:40rpx;padding:16rpx 0 0 100rpx;}
+.me_name text{width:350rpx;display:inline-block;}
+.me_name{font-size:34rpx;color:#fff;line-height:70rpx;height:70rpx;padding:0 0 0 32rpx;}
+.me_phone{padding:10rpx 0 0 32rpx;font-size:24rpx;color:#fff;}
+page{background:#fafafa;}
+.me_nav view, .me_nav image{width:373rpx;height:210rpx;}
+.me_nav{margin:0 0 20rpx 0;}
+.me_nav1{margin:0 0 20rpx 0;}
+.me_icon{width:40rpx;height:36rpx;vertical-align:top;margin:36rpx 40rpx 0 40rpx;}
+.me_icon1{width:16rpx;height:102rpx;vertical-align:top;margin:0 0 0 470rpx;}
+.me_nav1 view{background:#fff;line-height:102rpx;height:102rpx;font-size:30rpx;color:#222;}
+.border{border-bottom:1rpx solid #eee;}
+.me_masx{position:fixed;top:0;left:0;background:rgba(0,0,0,0.5);}
+.me_kf{width:530rpx;height:730rpx;position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}
+.me_kf_top{width:530rpx;height:604rpx;margin:0 0 56rpx 0;}
+.me_kf_top image{width:530rpx;height:604rpx;}
+.me_close{width:70rpx;height:70rpx;margin:0 auto;display:block;}
+.me_btn{width:360rpx;height:70rpx;background:#10be72;position:absolute;bottom:280rpx;left:0;right:0;margin:auto;border-radius:70rpx;border:1rpx solid #10be72;line-height:70rpx;color:#fff;font-size:26rpx;text-align:center;}
+.me_btn1{width:360rpx;height:70rpx;background:#fff;position:absolute;bottom:180rpx;left:0;right:0;margin:auto;border-radius:70rpx;border:1rpx solid #10be72;color:#10be72;font-size:26rpx;line-height:70rpx;text-align:center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
